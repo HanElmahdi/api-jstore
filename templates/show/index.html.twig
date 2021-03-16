@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+	<div class="img-fluid">
+		<img class="card-img-top" src="{{ article.image }}" alt="{{ article.image }}" width="100%">
+	</div>
+	<p class="date">Ecrit le
+		{{ article.createdAt | date("m/d/Y") }}
+		à
+		{{ article.createdAt | date("H:i") }}</p>
+	<h2 class="title p-1">{{ article.title }}</h2>
+	<p class="content text-justify">
+		{{ article.content }}
+	</p>
+{% endblock %}

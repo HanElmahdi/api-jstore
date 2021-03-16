@@ -32,8 +32,9 @@ class AppFixtures extends Fixture
             # code...
             $category = new Category();
             $category->setTitle($faker->text(50));
-            $category->setDescription($faker->text(250));
-            $category->setImage($faker->imageUrl());
+            $category->setDescription($faker->text(1000));
+            // $category->setImage($faker->imageUrl());
+            $category->setImage("https://picsum.photos/1200/350?random=".mt_rand(1, 55000));
             $manager->persist($category);
             $categories[] = $category;
         }
@@ -42,8 +43,9 @@ class AppFixtures extends Fixture
         for ($i=0; $i < 100; $i++) { 
             $article = new Article();
             $article->setTitle($faker->text(50));
-            $article->setContent($faker->text(250));
-            $article->setImage($faker->imageUrl());
+            $article->setContent($faker->text(1000));
+            // $article->setImage($faker->imageUrl());
+            $article->setImage("https://picsum.photos/1200/350?random=".mt_rand(1, 55000));
             $article->setCreatedAt(new \DateTime());
             $article->addCategory($categories[$faker->numberBetween(0, 14)]);
             $article->setAuthor($users[$faker->numberBetween(0, 49)]);
