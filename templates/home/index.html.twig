@@ -12,9 +12,9 @@
 		{% for article in articles %}
 			<div class="col-md-4">
 				<div class="card mb-4">
-					<img class="card-img-top" src="{{ article.image }}" alt="{{ article.image }}">
+					<img class="card-img-top" src="/assets/blog/images/{{ article.image }}" alt="{{ article.image }}">
 					<div class="card-body">
-						<p class="date">Ecrit le {{ article.createdAt | date("m/d/Y") }} à {{ article.createdAt | date("H:i") }}</p>
+						<p class="date">Ecrit le {{ article.createdAt | date("m/d/Y") }} à {{ article.createdAt | date("H:i") }} par {{ article.author }}</p>
 						<hr>
 						<h5 class="card-title">{{ article.title }}</h5>
 						<a href="{{ path('show', {'id': article.id}) }}" class="btn btn-primary">En savoir plus</a>
